@@ -3,7 +3,7 @@ const bodyParser = require('body-parser')//3 CONFIGURAR BODY PARSER;
 const app = express(); //INSTANCIA DE MODULO
 
 //CARGAR ARCHIVOS DE RUTA
-
+const person_routes = require('./routes/persons.routes')
 //MIDELWARES
 app.use(bodyParser.urlencoded({extended:false})) //3 PERMITE CONVERTIR TODO CONTENIDO QUE LLEGUE POR CUERTO A JSON
 app.use(bodyParser.json());
@@ -19,9 +19,11 @@ app.use((req, res, next) => {
 
 //RUTA
 
-app.get('/',function(request,response){
-    response.status(200).send({
-        mensaje:"todo bien"
-    })
-})
+//app.get('/',function(request,response){
+//    response.status(200).send({
+//        mensaje:"todo bien"
+//    })
+//})
+//USE PARA CREAR MIDELWARE
+app.use('/api',person_routes)
 module.exports=app;

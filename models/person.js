@@ -7,4 +7,4 @@ const PersonSherma = Shema({
     age:Number
 })
 //ELEGIR ESQUEMA Y ELGIRLO COMO MODELO nombre de la tabla Primera mayucula, luego en singular, el esquema
-module.exports = mongoose.model('Person',PersonSherma)
+module.exports = mongoose.model('persons',PersonSherma)

@@ -7,5 +7,6 @@ const router = express.Router();
 // ACEDEMOS AL controlador y el atributo name que contiene una funcion
 router.get('/home',PersonController.home);
 router.get('/listar',PersonController.getPersons);
+router.post('/guardar',PersonController.savePerson);
 
 module.exports = router;

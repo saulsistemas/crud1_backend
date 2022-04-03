@@ -50,6 +50,13 @@ var controller = {
             if(!personUpdate) return response.status(404).send({message:'no se ha podido buscar el dodcumento'})
             return response.status(200).send({person:personUpdate})
         })
+    },
+    deletePerson:(request,response)=>{
+        Person.findByIdAndRemove(request.params.id,(error,personRemove)=>{
+            if (error) return response.status(500).send({message:'error al devolver dato'})
+            if(!personRemove) return response.status(404).send({message:'no se ha podido eliminar'})
+            return response.status(200).send({person:personRemove})
+        })
     }
 }
 

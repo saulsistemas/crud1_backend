@@ -41,6 +41,15 @@ var controller = {
             if(!person) return response.status(404).send({message:'no se ha podido buscar el dodcumento'})
             return response.status(200).send({person:person});
         })
+    },
+    updatePerson:function(request,response){
+        var personId = request.params.id;
+        var update   = request.body;
+        Person.findByIdAndUpdate(personId,update,{new:true},function(error,personUpdate){
+            if (error) return response.status(500).send({message:'error al devolver dato'})
+            if(!personUpdate) return response.status(404).send({message:'no se ha podido buscar el dodcumento'})
+            return response.status(200).send({person:personUpdate})
+        })
     }
 }
 

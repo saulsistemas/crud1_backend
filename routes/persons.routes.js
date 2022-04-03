@@ -9,5 +9,6 @@ router.get('/home',PersonController.home);
 router.get('/listar',PersonController.getPersons);
 router.post('/guardar',PersonController.savePerson);
 router.get('/buscar/:id?',PersonController.getPerson);
+router.put('/actualizar/:id',PersonController.updatePerson);
 
 module.exports = router;
